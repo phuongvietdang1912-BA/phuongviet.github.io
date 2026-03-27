@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Air Quality Forecasting Using Deep Learning | Phuong Viet Dang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-page, .project-page header.major, .project-page h1, .project-page h2, .project-page h3,
+			.project-page p, .project-page ul, .project-page li { text-align: left !important; }
+			.project-page ul { margin-left: 1.25rem; margin-bottom: 1.5rem; }
+			.project-page li { margin-bottom: 0.65rem; line-height: 1.7; }
+			.project-page h2 { margin-top: 2.4rem; margin-bottom: 0.9rem; }
+			.project-page .image.main img { border-radius: 0.25rem; }
+			.project-page header.major .actions {
+				justify-content: center !important;
+				margin-top: 1.2rem;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<header id="header">
+				<a href="index.html" class="logo">Back to Portfolio</a>
+			</header>
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="air-quality-project.html">Project</a></li>
+				</ul>
+			</nav>
+			<div id="main">
+				<article class="post featured project-page">
+					<header class="major">
+						<h1>Air Quality Forecasting<br />Using Deep Learning</h1>
+						<p>Built a deep learning model to forecast PM2.5 air pollution levels and improve short-term forecasting accuracy for environmental planning.</p>
+					<ul class="actions">
+						<li>
+							<a href="https://drive.google.com/file/d/1A-h-3scPVRg5jcwYdd9Z9fUumEfMQ77W/view?usp=sharing" target="_blank" class="button">
+								View Python Code
+							</a>
+						</li>
+					</ul>
+					</header>
+
+					<span class="image main"><img src="images/air-quality/air-1.png" alt="Air quality forecasting project" /></span>
+
+					<h2>Business Context</h2>
+					<p>Accurate air quality forecasting supports public health planning, environmental monitoring, and operational response to pollution events. Short-term prediction is especially valuable where rapid decisions are needed.</p>
+
+					<h2>Problem Statement</h2>
+					<p>Baseline forecasting approaches did not provide sufficient short-term accuracy for PM2.5 prediction, limiting their usefulness for planning and risk response.</p>
+
+					<h2>Objective</h2>
+					<p>Develop a deep learning forecasting model that improves short-term PM2.5 prediction performance compared with baseline methods.</p>
+
+					<h2>Approach</h2>
+					<p>I tested multiple recurrent neural network models using different architectures and lookback windows. Performance was evaluated with MAE and RMSE, and the final model was selected based on out-of-sample forecasting results.</p>
+
+					<h2>Key Insights</h2>
+					<ul>
+						<li><strong>Deep learning outperformed baseline forecasting</strong> for short-term prediction</li>
+						<li><strong>Model design choices matter:</strong> architecture and lookback period significantly affected results</li>
+						<li><strong>Accuracy declines at longer horizons,</strong> making the model especially useful for near-term planning</li>
+						<li><strong>Forecasting error improved materially,</strong> with MAE reduced from about 69 to 45</li>
+					</ul>
+
+					<h2>Recommendations</h2>
+					<ul>
+						<li>Use the model for short-term planning where performance is strongest</li>
+						<li>Retrain the model regularly as new data becomes available</li>
+						<li>Pair forecasts with operational thresholds for practical use</li>
+						<li>Continue feature testing to improve horizon-level stability</li>
+					</ul>
+
+					<h2>Business Impact</h2>
+					<p>This project improved forecasting accuracy and created a more reliable analytical foundation for environmental monitoring and short-term public health planning.</p>
+
+					<h2>Tools Used</h2>
+					<p>Python, Deep Learning, GRU / LSTM, Time Series Forecasting</p>
+
+					<ul class="actions special">
+						<li><a href="index.html" class="button large">Back to Home</a></li>
+					</ul>
+				</article>
+			</div>
+			<div id="copyright">
+				<ul><li>&copy; Phuong Viet Dang</li><li>Design: HTML5 UP</li></ul>
+			</div>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

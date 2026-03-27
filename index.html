@@ -1,0 +1,568 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Phuong Viet Dang | Business Analytics Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+
+			#wrapper {
+				background: transparent;
+			}
+
+			.top-hero {
+				text-align: center;
+				padding: 3.8rem 2rem 2.4rem 2rem;
+				background: radial-gradient(circle at center, rgba(24,191,239,0.18), transparent 70%);
+			}
+
+			.top-hero h1 {
+				font-size: 3rem;
+				font-weight: 800;
+				letter-spacing: 2px;
+				margin: 0;
+				color: #ffffff;
+				text-transform: uppercase;
+				text-shadow: 0 8px 24px rgba(0,0,0,0.35);
+				text-align: center !important;
+			}
+
+			#main > article {
+				padding-top: 4rem;
+				padding-bottom: 4rem;
+			}
+
+			.intro-section header.major,
+			.intro-section h1,
+			.intro-section h2,
+			.intro-section h3,
+			.intro-section p,
+			.intro-section ul,
+			.intro-section li {
+				word-spacing: normal !important;
+				letter-spacing: normal !important;
+			}
+
+			.intro-title {
+				text-align: center;
+				margin-bottom: 2.5rem;
+			}
+
+			.intro-title h1 {
+				text-align: center !important;
+				font-size: 3rem;
+				font-weight: 800;
+				letter-spacing: 1px;
+				margin-bottom: 0;
+			}
+
+			.hero-grid {
+				display: grid;
+				grid-template-columns: 1.1fr 0.9fr;
+				gap: 3rem;
+				align-items: center;
+			}
+
+			.hero-text,
+			.hero-text p,
+			.hero-text ul,
+			.hero-text li {
+				text-align: left !important;
+			}
+
+			.hero-text p {
+				margin-bottom: 1rem;
+				line-height: 1.85;
+			}
+
+			.hero-text ul {
+				margin: 1rem 0 1.5rem 1.25rem;
+				padding-left: 0.25rem;
+			}
+
+			.hero-text li {
+				margin-bottom: 0.65rem;
+				line-height: 1.7;
+			}
+
+			.hero-links {
+				margin-top: 1rem;
+			}
+
+			.hero-links a {
+				margin-right: 1rem;
+			}
+
+			.hero-grid .profile-image {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.hero-grid .profile-image::before {
+				content: "";
+				position: absolute;
+				width: 360px;
+				height: 360px;
+				background: radial-gradient(circle, rgba(24,191,239,0.2), transparent 70%);
+				border-radius: 50%;
+				z-index: 0;
+			}
+
+			.hero-grid .profile-image img {
+				width: 100%;
+				max-width: 420px;
+				height: 520px;
+				object-fit: cover;
+				border-radius: 0.8rem;
+				box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+				position: relative;
+				z-index: 1;
+				transition: all 0.3s ease;
+			}
+
+			.hero-grid .profile-image img:hover {
+				transform: scale(1.03);
+				box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+			}
+
+			#projects header.major,
+			#projects h2,
+			#projects p {
+				text-align: center;
+			}
+
+			.project-grid-3 {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 2rem;
+				align-items: stretch;
+			}
+
+			.project-card {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				border: 1px solid rgba(144,144,144,0.25);
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.02);
+				height: 100%;
+				text-align: left !important;
+				transition: all 0.25s ease;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.project-card:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+				border-color: rgba(255,255,255,0.2);
+			}
+
+			.project-card h3,
+			.project-card p {
+				text-align: left !important;
+				word-spacing: normal !important;
+				letter-spacing: normal !important;
+			}
+
+			.project-card h3 {
+				font-size: 1.02rem;
+				line-height: 1.45;
+				margin-bottom: 0.85rem;
+				min-height: 4.4rem;
+			}
+
+			.project-card p {
+				font-size: 0.95rem;
+				line-height: 1.75;
+				margin-bottom: 1rem;
+			}
+
+			.project-card .image.fit {
+				margin-bottom: 1rem;
+				overflow: hidden;
+				border-radius: 0.25rem;
+			}
+
+			.project-card .image.fit img {
+				width: 100%;
+				height: 220px;
+				object-fit: cover;
+				border-radius: 0.25rem;
+				transition: transform 0.4s ease;
+			}
+
+			.project-card:hover .image.fit img {
+				transform: scale(1.05);
+			}
+
+			.project-card .actions {
+				margin-top: auto;
+			}
+
+			.project-card .actions .button {
+				width: 100%;
+				text-align: center;
+			}
+
+			#skills header.major,
+			#skills h2 {
+				text-align: center;
+			}
+
+			.skills-icons {
+				display: grid;
+				grid-template-columns: repeat(6, minmax(90px, 1fr));
+				gap: 2rem;
+				align-items: center;
+				justify-items: center;
+				margin: 2rem 0 3rem 0;
+			}
+
+			.skills-icons img {
+				width: 110px;
+				height: 110px;
+				object-fit: contain;
+				display: block;
+			}
+
+			.skill-columns {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 3rem;
+			}
+
+			.skill-columns h3,
+			.skill-columns p,
+			.skill-columns ul,
+			.skill-columns li {
+				text-align: left !important;
+				word-spacing: normal !important;
+				letter-spacing: normal !important;
+			}
+
+			.skill-columns h3 {
+				font-style: italic;
+				text-decoration: underline;
+				margin-bottom: 1rem;
+			}
+
+			.skill-columns ul {
+				list-style: none;
+				padding-left: 0;
+				margin-left: 0;
+			}
+
+			.skill-columns li {
+				margin-bottom: 0.8rem;
+				line-height: 1.7;
+			}
+
+			#contact {
+				text-align: center !important;
+			}
+
+			#contact header.major,
+			#contact h2,
+			#contact h3,
+			#contact p {
+				text-align: center !important;
+			}
+
+			#contact ul {
+				display: inline-block;
+				text-align: left;
+				margin: 1.5rem auto;
+			}
+
+			#contact li {
+				margin-bottom: 0.65rem;
+				line-height: 1.7;
+			}
+
+			.contact-note {
+				margin-top: 1rem;
+				font-style: italic;
+				font-weight: 600;
+			}
+
+			.thank-you {
+				text-align: center !important;
+				padding-top: 1.25rem;
+			}
+
+			.thank-you h2,
+			.thank-you p {
+				text-align: center !important;
+			}
+
+			.thank-you p {
+				font-style: italic;
+			}
+
+			@media screen and (max-width: 980px) {
+				.hero-grid,
+				.skill-columns,
+				.project-grid-3 {
+					grid-template-columns: 1fr;
+				}
+
+				.skills-icons {
+					grid-template-columns: repeat(3, minmax(90px, 1fr));
+					gap: 1.5rem;
+				}
+
+				.hero-grid .profile-image img {
+					max-width: 380px;
+					height: 470px;
+				}
+
+				.project-card h3 {
+					min-height: auto;
+				}
+			}
+
+			@media screen and (max-width: 736px) {
+				.top-hero {
+					padding: 3rem 1.25rem 2rem 1.25rem;
+				}
+
+				.top-hero h1 {
+					font-size: 2.2rem;
+					letter-spacing: 1px;
+				}
+
+				.intro-title h1 {
+					font-size: 2.25rem;
+				}
+
+				.skills-icons {
+					grid-template-columns: repeat(2, minmax(90px, 1fr));
+				}
+
+				.skills-icons img {
+					width: 90px;
+					height: 90px;
+				}
+
+				.hero-grid .profile-image::before {
+					width: 280px;
+					height: 280px;
+				}
+
+				.hero-grid .profile-image img {
+					max-width: 320px;
+					height: 400px;
+				}
+			}
+		</style>
+	</head>
+
+	<body class="is-preload">
+		<div id="wrapper" class="fade-in">
+
+			<section class="top-hero">
+				<h1>Business Analytics Portfolio</h1>
+				<p>       </p>
+			</section>
+
+			<nav id="nav">
+				<ul class="links">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="https://www.linkedin.com/in/phuongviet1912/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="https://github.com/phuongvietdang1912-BA/BA-portfolio" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="mailto:dangvietphuong191296@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</nav>
+
+			<div id="main">
+
+				<article class="post featured intro-section">
+					<header class="major intro-title">
+						<h1>Hi, I’m Phuong Viet</h1>
+					</header>
+
+					<div class="hero-grid">
+						<div class="hero-text">
+							<p>
+								I’m a Master of Business Analytics student at Deakin University with a strong
+								interest in using data to solve real-world business problems.
+							</p>
+
+							<p>
+								I have hands-on experience across Power BI, SQL, and Python, working on projects
+								in customer analytics, predictive modelling, dashboard design, and decision
+								optimisation — most notably with World Vision Australia.
+							</p>
+
+							<ul>
+								<li>Strong ability to connect data insights with business impact</li>
+								<li>Experience delivering insights from real-world projects</li>
+								<li>Focus on clear communication for non-technical stakeholders</li>
+								<li>Passion for solving meaningful business problems using data</li>
+							</ul>
+
+							<p>
+								I’m currently seeking Business Analyst / Data Analyst opportunities in Melbourne,
+								where I can contribute to data-driven decision-making and continuous improvement.
+							</p>
+
+							<p><a href="#" class="button large">View Resume</a></p>
+
+						</div>
+
+						<div class="profile-image">
+							<img src="images/profile.jpg" alt="Phuong Viet Dang" />
+						</div>
+					</div>
+				</article>
+
+				<article class="post" id="projects">
+					<header class="major">
+						<h2>Featured Projects</h2>
+						<p>Six projects across business analytics, dashboarding, SQL, and machine learning.</p>
+					</header>
+
+					<div class="project-grid-3">
+						<section class="project-card">
+							<a href="wva-project.html" class="image fit"><img src="images/wva/wva-1.png" alt="World Vision Australia project" /></a>
+							<h3>World Vision Australia – Donor Journey Optimisation</h3>
+							<p>Optimised donor journeys through behavioural segmentation to improve conversion speed, channel sequencing, and fundraising efficiency.</p>
+							<ul class="actions special">
+								<li><a href="wva-project.html" class="button">View Project</a></li>
+							</ul>
+						</section>
+
+						<section class="project-card">
+							<a href="cybersecurity-project.html" class="image fit"><img src="images/cybersecurity/cybersecurity-1.png" alt="Cybersecurity analytics dashboard" /></a>
+							<h3>Cybersecurity Risk & Employee Behaviour Analytics</h3>
+							<p>Built stakeholder-based Power BI dashboards to monitor phishing risk, employee behaviour, and training effectiveness across teams.</p>
+							<ul class="actions special">
+								<li><a href="cybersecurity-project.html" class="button">View Project</a></li>
+							</ul>
+						</section>
+
+						<section class="project-card">
+							<a href="sql-project.html" class="image fit"><img src="images/sql/sql-1.png" alt="Customer segmentation SQL project" /></a>
+							<h3>Customer Segmentation & Revenue Analysis (SQL)</h3>
+							<p>Used SQL to understand customer behaviour, loyalty performance, and revenue drivers to improve targeting and profitability.</p>
+							<ul class="actions special">
+								<li><a href="sql-project.html" class="button">View Project</a></li>
+							</ul>
+						</section>
+
+						<section class="project-card">
+							<a href="review-prediction-project.html" class="image fit"><img src="images/review/review-1.png" alt="Property review prediction project" /></a>
+							<h3>Predicting Property Review Scores Using Machine Learning</h3>
+							<p>Developed a predictive model using structured and unstructured data to estimate review scores and identify service drivers.</p>
+							<ul class="actions special">
+								<li><a href="review-prediction-project.html" class="button">View Project</a></li>
+							</ul>
+						</section>
+
+						<section class="project-card">
+							<a href="air-quality-project.html" class="image fit"><img src="images/air-quality/air-1.png" alt="Air quality forecasting project" /></a>
+							<h3>Air Quality Forecasting Using Deep Learning</h3>
+							<p>Built a deep learning model to forecast PM2.5 levels and improve short-term forecasting for environmental planning.</p>
+							<ul class="actions special">
+								<li><a href="air-quality-project.html" class="button">View Project</a></li>
+							</ul>
+						</section>
+
+						<section class="project-card">
+							<a href="solar-project.html" class="image fit"><img src="images/solar/solar-1.png" alt="Solar energy prediction project" /></a>
+							<h3>Solar Power Generation Prediction Using Machine Learning</h3>
+							<p>Developed a machine learning model to predict solar energy output and improve planning for energy operations.</p>
+							<ul class="actions special">
+								<li><a href="solar-project.html" class="button">View Project</a></li>
+							</ul>
+						</section>
+					</div>
+				</article>
+
+				<article class="post" id="skills">
+					<header class="major">
+						<h2>Technical & Professional Skills</h2>
+					</header>
+
+					<div class="skills-icons">
+						<img src="images/icons/excel.png" alt="Excel" />
+						<img src="images/icons/powerbi.png" alt="Power BI" />
+						<img src="images/icons/sql.png" alt="SQL" />
+						<img src="images/icons/python.png" alt="Python" />
+						<img src="images/icons/tableau.png" alt="Tableau" />
+						<img src="images/icons/rapidminer.png" alt="RapidMiner" />
+					</div>
+
+					<div class="skill-columns">
+						<div>
+							<h3>Technical skills</h3>
+							<ul>
+								<li>⭐ Data visualisation & dashboard design</li>
+								<li>⭐ Predictive analytics & forecasting</li>
+								<li>⭐ KPI analysis & performance tracking</li>
+								<li>⭐ Data cleaning & transformation</li>
+							</ul>
+						</div>
+
+						<div>
+							<h3>Business skills</h3>
+							<ul>
+								<li>⭐ Stakeholder communication</li>
+								<li>⭐ Problem-solving</li>
+								<li>⭐ Analytical thinking</li>
+								<li>⭐ Team collaboration</li>
+							</ul>
+						</div>
+					</div>
+				</article>
+
+				<article class="post contact-block" id="contact">
+					<header class="major">
+						<h2>📬 Contact</h2>
+					</header>
+
+					<ul>
+						<li>Location: Melbourne, Australia</li>
+						<li>Mobile: +61 449 099 690</li>
+						<li>Email: <a href="mailto:dangvietphuong191296@gmail.com">dangvietphuong191296@gmail.com</a></li>
+					</ul>
+
+					<h3 class="contact-note">Open to Business Analyst / Data Analyst roles</h3>
+
+					<div class="thank-you">
+						<h2>Thanks!</h2>
+						<p>Thank you for taking the time to visit my portfolio.</p>
+					</div>
+				</article>
+
+			</div>
+
+			<div id="copyright">
+				<ul><li>&copy; Phuong Viet Dang</li><li>Design: HTML5 UP</li></ul>
+			</div>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
