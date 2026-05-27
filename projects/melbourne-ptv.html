@@ -3,8 +3,8 @@
 <head>
 	<title>Melbourne PTV Patronage Analysis | Phuong Viet Dang</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="description" content="Melbourne public transport patronage analysis using SQL, Python and public data." />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Melbourne public transport post-COVID patronage recovery analysis using SQL, Python, and four integrated Victorian Government datasets." />
 
 	<link rel="icon" type="image/svg+xml" href="../images/favicon.svg?v=4" />
 	<link rel="shortcut icon" type="image/svg+xml" href="../images/favicon.svg?v=4" />
@@ -132,7 +132,7 @@
 					</span>
 
 					<p>
-						This project analyses Melbourne public transport patronage using public datasets from Victoria. The project focuses on data integration, SQL/Python preparation, and analytical modelling to understand how transport demand changed across modes, locations, and time periods.
+						This project integrates four Victorian Government public transport datasets into a SQL warehouse to trace Melbourne's post-COVID patronage recovery across modes, stations, and day types. The datasets arrive at three different grains and schemas, so the work centres on reconciling them into a single, reliable analytical model.
 					</p>
 
 					<hr class="major" />
@@ -140,58 +140,59 @@
 					<h2>Business Problem</h2>
 
 					<p>
-						Public transport demand changes over time due to work patterns, population movement, service changes, and post-disruption recovery. Decision-makers need clear analysis of which modes and locations are recovering, which remain below historical demand, and how patronage varies across time.
+						COVID-19 caused an unprecedented collapse in Melbourne public transport patronage, and recovery has been uneven across modes, locations, and trip types. Decision-makers need to know which parts of the network have recovered, which remain below pre-COVID demand, and how travel patterns have structurally changed — to guide service planning and investment.
 					</p>
 
 					<h2>Key Questions</h2>
 
 					<ul>
-						<li>How has public transport patronage changed over time?</li>
-						<li>Which transport modes show stronger or weaker recovery?</li>
-						<li>How do weekday and weekend travel patterns differ?</li>
-						<li>How can multiple public datasets be combined into a reliable analytical model?</li>
+						<li>How far has patronage recovered toward pre-COVID (2018) levels, by mode?</li>
+						<li>Which modes recovered fastest, and which still lag?</li>
+						<li>Has the weekday commute recovered differently from weekend leisure travel?</li>
+						<li>Within the working week, are some days recovering more slowly than others?</li>
 					</ul>
 
 					<h2>Data & Tools</h2>
 
 					<ul>
-						<li><strong>Dataset:</strong> Victorian public transport datasets</li>
-						<li><strong>Tools:</strong> SQL, Python, Excel, data modelling</li>
-						<li><strong>Techniques:</strong> public data integration, data cleaning, grain alignment, SQL modelling, exploratory analysis</li>
+						<li><strong>Datasets:</strong> four Victorian Government public-transport datasets (monthly patronage by mode, annual metro and regional station patronage, monthly average by day-type) — Department of Transport and Planning, CC BY 4.0</li>
+						<li><strong>Scale:</strong> ~6,000 rows across four sources with three different grains</li>
+						<li><strong>Tools:</strong> SQL Server, Python (data cleaning), dimensional modelling</li>
+						<li><strong>Techniques:</strong> multi-source integration, schema reconciliation, grain alignment, conformed dimensions, window-function analysis, recovery indexing</li>
 					</ul>
 
 					<h2>Approach</h2>
 
 					<ol>
-						<li>Collected and reviewed multiple public transport datasets.</li>
-						<li>Identified the grain of each dataset before combining them.</li>
-						<li>Cleaned and prepared data using Python and SQL.</li>
-						<li>Designed a structured analytical model for mode, time, and location analysis.</li>
-						<li>Created metrics to compare patronage recovery and travel pattern differences.</li>
+						<li>Collected four public datasets with different grains (monthly-by-mode, annual-by-station, monthly-by-day-type) and schemas (metro stations report 15 columns; regional stations only 6).</li>
+						<li>Cleaned real-world mess in Python: BOM characters, trailing junk rows, thousand-separator numbers, inconsistent mode names across sources, and station-name normalisation.</li>
+						<li>Built a four-layer SQL warehouse (raw, cleaned, dimensional, analytics) with conformed dimensions shared across three fact tables.</li>
+						<li>Indexed patronage to a 2018 pre-COVID baseline so modes of different sizes could be compared on recovery.</li>
+						<li>Used window functions for month-over-month, year-over-year, and day-of-week recovery analysis.</li>
 					</ol>
 
 					<h2>Key Insights</h2>
 
 					<ul>
-						<li>Different transport modes may recover at different rates after major demand changes.</li>
-						<li>Weekday and weekend patronage patterns can reveal different user behaviours.</li>
-						<li>Public datasets require careful grain checking before integration.</li>
-						<li>A structured SQL model improves the reliability of public-sector analytics.</li>
+						<li><strong>Recovery splits metro vs regional.</strong> Regional rail has not only recovered but exceeded pre-COVID patronage (~109% of 2018), while metropolitan train remains ~15% below baseline (~85%) and tram lags furthest (~78%).</li>
+						<li><strong>The shortfall is the weekday commute, not travel in general.</strong> For metro train, weekend (leisure) travel recovered to ~89% of pre-COVID, but weekday (commute) travel plateaued at ~74% — a ~15-point gap.</li>
+						<li><strong>Within the week, Monday and Friday lag mid-week.</strong> Metro train recovery is lowest on Monday and Friday (~70%) and highest Tuesday–Thursday (73–79%) — the structural signature of hybrid work, where office attendance clusters mid-week.</li>
+						<li><strong>Findings are descriptive, not causal.</strong> The patterns are consistent with a shift to hybrid work, but other factors (regional population growth, service and fare changes) are not separated out.</li>
 					</ul>
 
 					<h2>Business Recommendations</h2>
 
 					<ul>
-						<li>Compare recovery by transport mode before making service-planning decisions.</li>
-						<li>Separate weekday and weekend analysis to avoid hiding different travel behaviours.</li>
-						<li>Use recovery index metrics to communicate patronage change clearly.</li>
-						<li>Maintain transparent data documentation because public datasets often have different structures and update frequencies.</li>
+						<li>Plan capacity around the new weekly shape: mid-week (Tue–Thu) demand recovered far more than Monday/Friday, so uniform weekday scheduling over-serves the week's edges.</li>
+						<li>Treat metro and regional separately in planning — they are on different recovery trajectories, and a single network-wide figure hides the divergence.</li>
+						<li>Separate weekday and weekend analysis in all reporting, since blended figures conceal the commute-vs-leisure gap that drives the story.</li>
+						<li>Use a pre-COVID baseline recovery index to communicate change clearly, rather than raw patronage counts that aren't comparable across modes.</li>
 					</ul>
 
 					<h2>Project Value</h2>
 
 					<p>
-						This project demonstrates my ability to work with messy public datasets, think carefully about data grain, integrate multiple sources, and build an analysis that can support public-sector or operational decision-making.
+						This project demonstrates my ability to integrate messy, multi-source public data into a reliable analytical model, reason carefully about mismatched data grains, and translate the results into a clear, current, and locally relevant finding — Melbourne's uneven, hybrid-work-shaped public-transport recovery.
 					</p>
 
 					<ul class="actions">
