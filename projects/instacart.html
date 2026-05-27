@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Air Quality Forecasting | Phuong Viet Dang</title>
+	<title>Instacart SQL Power BI Project | Phuong Viet Dang</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Air quality forecasting project using Python, TensorFlow, GRU and LSTM models." />
+	<meta name="description" content="Instacart SQL Server data warehouse and Power BI cross-sell analysis project." />
 
 	<link rel="icon" type="image/svg+xml" href="../images/favicon.svg?v=4" />
 	<link rel="shortcut icon" type="image/svg+xml" href="../images/favicon.svg?v=4" />
@@ -82,6 +82,27 @@
 			object-position: top center;
 			background: #f7f7f7;
 		}
+
+		.powerbi-container {
+			position: relative;
+			width: 100%;
+			height: 0;
+			padding-bottom: 56.25%;
+			margin: 1.5rem 0 2rem 0;
+			border: 1px solid rgba(210, 215, 217, 0.75);
+			border-radius: 0.375em;
+			overflow: hidden;
+			background: var(--soft-bg);
+		}
+
+		.powerbi-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
 	</style>
 </head>
 
@@ -124,78 +145,88 @@
 
 				<section>
 					<header class="main">
-						<h1>Air Quality Forecasting with Deep Learning</h1>
+						<h1>Instacart Cross-Sell & Bundle Strategy</h1>
 					</header>
 
-					<span class="image main">
-						<img src="../images/projects/air-quality/result.png" alt="Air quality forecasting model result chart" />
-					</span>
+					<h2>Interactive Power BI Dashboard</h2>
 
 					<p>
-						This project develops and compares deep learning models for short-term PM2.5 air quality forecasting. The objective was to forecast the next 24 hours of PM2.5 values and evaluate whether recurrent neural networks can outperform a simple naïve baseline.
+						This project uses Instacart market basket data to understand product relationships, reorder behaviour, and opportunities for cross-sell and bundle strategy. The project combines SQL Server data warehousing with Power BI reporting to create a business-ready analytics solution.
 					</p>
+
+					<div class="powerbi-container">
+						<iframe 
+							title="Instacart Cross-Sell and Bundle Strategy Power BI Dashboard"
+							src="https://app.fabric.microsoft.com/view?r=eyJrIjoiYzA1YzE4N2ItOTc1Yy00ZmMzLThkNjgtMjRkOGIxYzMwNGEzIiwidCI6IjIzMjYxY2E4LTZjMDAtNGRkOS05NGMxLWFmODE1ZDVkMmRmYyJ9&pageName=1485ed93d0aca2745394"
+							frameborder="0"
+							allowFullScreen="true">
+						</iframe>
+					</div>
 
 					<hr class="major" />
 
 					<h2>Business Problem</h2>
 
 					<p>
-						Air quality forecasting can support monitoring, planning, and early-warning decisions. However, predictive models must be evaluated carefully because a model that performs well on average may still fail during pollution spikes or unusual weather conditions.
+						Grocery platforms need to understand which products are frequently purchased together, how reorder behaviour develops over time, and which departments drive repeat purchasing. Without a reliable data model, these questions are difficult to answer at scale.
 					</p>
 
 					<h2>Key Questions</h2>
 
 					<ul>
-						<li>Can deep learning improve 24-hour PM2.5 forecasting compared with a naïve baseline?</li>
-						<li>Which recurrent architecture performs best?</li>
-						<li>How does prediction error change across the 24-hour forecast horizon?</li>
-						<li>What are the practical limitations of the final model?</li>
+						<li>Which departments and products dominate basket behaviour?</li>
+						<li>How does reorder behaviour change across customer order history?</li>
+						<li>Which product combinations create strong cross-sell opportunities?</li>
+						<li>How can the data be structured for reliable Power BI analysis?</li>
 					</ul>
 
 					<h2>Data & Tools</h2>
 
 					<ul>
-						<li><strong>Dataset:</strong> historical hourly air quality and weather-related observations</li>
-						<li><strong>Tools:</strong> Python, Pandas, NumPy, TensorFlow, Keras, Matplotlib</li>
-						<li><strong>Models:</strong> GRU, LSTM, stacked LSTM, baseline forecasting model</li>
-						<li><strong>Metrics:</strong> MAE, RMSE, horizon-wise error</li>
+						<li><strong>Dataset:</strong> Instacart orders, products, departments, aisles, and reorder behaviour</li>
+						<li><strong>Scale:</strong> approximately 3.4M orders and 33M order-product rows</li>
+						<li><strong>Tools:</strong> SQL Server, T-SQL, Power BI, DAX</li>
+						<li><strong>Techniques:</strong> dimensional modelling, ETL validation, star schema design, basket analysis, Power BI reporting</li>
 					</ul>
 
 					<h2>Approach</h2>
 
 					<ol>
-						<li>Prepared hourly time-series data for supervised learning.</li>
-						<li>Created lookback windows and direct 24-step forecast targets.</li>
-						<li>Benchmarked multiple recurrent neural network architectures.</li>
-						<li>Compared model results against a naïve baseline.</li>
-						<li>Evaluated error across forecast horizons from 1 hour to 24 hours.</li>
-						<li>Documented deployment limitations and model risk.</li>
+						<li>Cleaned raw CSV data and prepared it for SQL Server loading.</li>
+						<li>Created raw, staging/cleaning, and data warehouse layers.</li>
+						<li>Designed a Kimball-style star schema with fact and dimension tables.</li>
+						<li>Loaded fact and dimension tables using surrogate keys.</li>
+						<li>Built validation checks to confirm row counts, key integrity, and data quality.</li>
+						<li>Created analytical SQL views and Power BI visuals for business interpretation.</li>
 					</ol>
 
-					<h2>Key Results</h2>
+					<h2>Key Insights</h2>
 
 					<ul>
-						<li>The final GRU-128 model achieved approximately <strong>MAE 45.64</strong> and <strong>RMSE 64.70</strong>.</li>
-						<li>The model improved error by approximately <strong>35%</strong> compared with the naïve baseline.</li>
-						<li>Short-horizon predictions were more accurate than longer-horizon predictions.</li>
-						<li>Forecast error increased as the model predicted further into the future.</li>
+						<li>The <strong>5th order</strong> emerged as a loyalty inflection point, marking where occasional buyers tend to become repeat customers.</li>
+						<li>Produce and dairy/eggs are the most frequently co-purchased departments. Note: raw co-occurrence favours universally popular categories, so true bundle strength should be confirmed with a <strong>lift analysis</strong> (lift &gt; 1 indicates a genuine association beyond chance) — a documented next step.</li>
+						<li>Reorder behaviour becomes more predictable as customers place more orders, supporting reorder-based recommendations for established customers.</li>
+						<li>A properly layered SQL warehouse (raw to cleaned to dimensional) made the Power BI model cleaner, faster, and easier to validate.</li>
 					</ul>
 
-					<h2>Business Interpretation</h2>
+					<h2>Business Recommendations</h2>
 
-					<p>
-						The model is useful for short-term trend monitoring and can support early operational awareness. However, it should not be treated as a fully automated public-health warning system without further validation, real-time monitoring, and testing under extreme pollution events.
-					</p>
+					<ul>
+						<li>Target customers around the <strong>5th-order inflection point</strong> with reorder-based prompts to convert occasional buyers into repeat customers.</li>
+						<li>Before committing to product bundles, compute <strong>lift</strong> across department pairs to distinguish genuine cross-sell relationships from merely popular items bought independently.</li>
+						<li>Use department-level reorder rate to prioritise merchandising and recommendation strategy.</li>
+						<li>Maintain a reusable dimensional model for scalable, validated BI reporting.</li>
+					</ul>
 
 					<h2>Project Value</h2>
 
 					<p>
-						This project demonstrates my ability to design a forecasting experiment, compare model architectures, evaluate results properly, and explain model limitations in business language.
+						This project demonstrates my ability to build the full analytics pipeline: raw data preparation, SQL warehousing, validation, business queries, Power BI modelling, and insight communication.
 					</p>
 
 					<ul class="actions">
 						<li>
-							<a href="https://github.com/phuongvietdang1912-BA/business-analytics-portfolio/tree/main/03-AirQuality-Py" class="button primary" target="_blank" rel="noopener noreferrer">View GitHub Project</a>
+							<a href="https://github.com/phuongvietdang1912-BA/business-analytics-portfolio/tree/main/02-InstaCart-SQL-PowerBI" class="button primary" target="_blank" rel="noopener noreferrer">View GitHub Project</a>
 						</li>
 						<li>
 							<a href="../index.html#projects" class="button">Back to Projects</a>
@@ -220,7 +251,6 @@
 						<li><a href="../index.html#skills">Skills</a></li>
 						<li><a href="../index.html#about">About</a></li>
 						<li><a href="../index.html#contact">Contact</a></li>
-
 						<li>
 							<span class="opener">Project Pages</span>
 							<ul>
