@@ -3,7 +3,7 @@
 <head>
 	<title>Instacart SQL Power BI Project | Phuong Viet Dang</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Instacart SQL Server data warehouse and Power BI cross-sell analysis project." />
 
 	<link rel="icon" type="image/svg+xml" href="../images/favicon.svg?v=4" />
@@ -185,7 +185,7 @@
 					<ul>
 						<li><strong>Dataset:</strong> Instacart orders, products, departments, aisles, and reorder behaviour</li>
 						<li><strong>Scale:</strong> approximately 3.4M orders and 33M order-product rows</li>
-						<li><strong>Tools:</strong> SQL Server, T-SQL, Power BI, DAX, Python</li>
+						<li><strong>Tools:</strong> SQL Server, T-SQL, Power BI, DAX</li>
 						<li><strong>Techniques:</strong> dimensional modelling, ETL validation, star schema design, basket analysis, Power BI reporting</li>
 					</ul>
 
@@ -203,19 +203,19 @@
 					<h2>Key Insights</h2>
 
 					<ul>
-						<li>Produce and dairy/eggs showed strong co-purchase behaviour, making them suitable for bundle strategy.</li>
-						<li>The 5th order was identified as a loyalty inflection point.</li>
-						<li>Reorder behaviour became more meaningful as customers placed more orders.</li>
-						<li>A proper SQL warehouse made the Power BI model cleaner, faster, and easier to validate.</li>
+						<li>The <strong>5th order</strong> emerged as a loyalty inflection point, marking where occasional buyers tend to become repeat customers.</li>
+						<li>Produce and dairy/eggs are the most frequently co-purchased departments. Note: raw co-occurrence favours universally popular categories, so true bundle strength should be confirmed with a <strong>lift analysis</strong> (lift &gt; 1 indicates a genuine association beyond chance) — a documented next step.</li>
+						<li>Reorder behaviour becomes more predictable as customers place more orders, supporting reorder-based recommendations for established customers.</li>
+						<li>A properly layered SQL warehouse (raw to cleaned to dimensional) made the Power BI model cleaner, faster, and easier to validate.</li>
 					</ul>
 
 					<h2>Business Recommendations</h2>
 
 					<ul>
-						<li>Use frequently co-purchased departments to design bundle promotions.</li>
-						<li>Target customers around key loyalty inflection points with reorder-based recommendations.</li>
-						<li>Use department-level reorder rate to prioritise merchandising and recommendation strategies.</li>
-						<li>Maintain a reusable dimensional model for scalable BI reporting.</li>
+						<li>Target customers around the <strong>5th-order inflection point</strong> with reorder-based prompts to convert occasional buyers into repeat customers.</li>
+						<li>Before committing to product bundles, compute <strong>lift</strong> across department pairs to distinguish genuine cross-sell relationships from merely popular items bought independently.</li>
+						<li>Use department-level reorder rate to prioritise merchandising and recommendation strategy.</li>
+						<li>Maintain a reusable dimensional model for scalable, validated BI reporting.</li>
 					</ul>
 
 					<h2>Project Value</h2>
