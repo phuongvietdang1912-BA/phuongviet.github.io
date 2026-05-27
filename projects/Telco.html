@@ -1,14 +1,75 @@
 <head>
-	<title>Project Case Study | Phuong Viet Dang</title>
+	<title>Telco Churn Analysis | Phuong Viet Dang</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="description" content="Business Analytics project case study by Phuong Viet Dang." />
+	<meta name="description" content="Telco customer churn and retention analysis using Python, Power BI and DAX." />
 
-	<link rel="icon" type="image/svg+xml" href="../images/favicon.svg?v=3" />
-	<link rel="shortcut icon" type="image/svg+xml" href="../images/favicon.svg?v=3" />
+	<link rel="icon" type="image/svg+xml" href="../images/favicon.svg?v=4" />
+	<link rel="shortcut icon" type="image/svg+xml" href="../images/favicon.svg?v=4" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
 
 	<style>
+		:root {
+			--accent: #2563eb;
+			--accent-dark: #1d4ed8;
+			--navy: #0f172a;
+			--soft-bg: #f8fafc;
+		}
+
+		a {
+			color: var(--accent);
+		}
+
+		a:hover {
+			color: var(--accent-dark) !important;
+		}
+
+		strong, b {
+			color: var(--navy);
+		}
+
+		.button {
+			box-shadow: inset 0 0 0 2px var(--accent);
+			color: var(--accent) !important;
+		}
+
+		.button:hover {
+			background-color: rgba(37, 99, 235, 0.08);
+			box-shadow: inset 0 0 0 2px var(--accent-dark);
+			color: var(--accent-dark) !important;
+		}
+
+		.button.primary {
+			background-color: var(--accent);
+			box-shadow: none;
+			color: #ffffff !important;
+		}
+
+		.button.primary:hover {
+			background-color: var(--accent-dark);
+		}
+
+		header.major > :last-child,
+		#header {
+			border-bottom-color: var(--accent);
+		}
+
+		#menu ul a:hover,
+		#menu ul span:hover,
+		#menu ul a.opener:before,
+		#menu ul span.opener:before {
+			color: var(--accent);
+		}
+
+		.icon.solid:before,
+		.icon.brands:before {
+			color: var(--accent);
+		}
+
+		#sidebar {
+			background-color: var(--soft-bg);
+		}
+
 		.top-page-actions {
 			margin: 2rem 0 0 0;
 		}
@@ -21,187 +82,3 @@
 		}
 	</style>
 </head>
-
-<body class="is-preload">
-
-	<div id="wrapper">
-
-		<div id="main">
-			<div class="inner">
-
-				<header id="header">
-					<a href="../index.html" class="logo">
-						<strong>Phuong Viet Dang</strong> | Business Analytics Portfolio
-					</a>
-
-					<ul class="icons">
-						<li>
-							<a href="https://github.com/phuongvietdang1912-BA/business-analytics-portfolio" class="icon brands fa-github" target="_blank" rel="noopener noreferrer">
-								<span class="label">GitHub</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.linkedin.com/in/phuongviet1912/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer">
-								<span class="label">LinkedIn</span>
-							</a>
-						</li>
-						<li>
-							<a href="mailto:phuong.vietdang1912@gmail.com" class="icon solid fa-envelope">
-								<span class="label">Email</span>
-							</a>
-						</li>
-					</ul>
-				</header>
-
-				<ul class="actions top-page-actions">
-					<li>
-						<a href="../index.html" class="button icon solid fa-arrow-left">Back to Main Page</a>
-					</li>
-				</ul>
-
-				<section>
-					<header class="main">
-						<h1>Telco Customer Churn & Retention Analysis</h1>
-					</header>
-
-					<span class="image main">
-						<img src="../images/projects/telco/executive-overview.png" alt="Telco churn Power BI executive overview dashboard" />
-					</span>
-
-					<p>
-						This project analyses customer churn behaviour across a telco customer base and translates the findings into targeted retention actions. The goal was not only to identify who churned, but to understand which customer groups represented the largest commercial risk and where the business should prioritise retention effort.
-					</p>
-
-					<hr class="major" />
-
-					<h2>Business Problem</h2>
-
-					<p>
-						Telco churn creates direct revenue loss, but treating all churned customers equally can waste retention budget. The business needed to understand which customer segments were most exposed, what behaviours were associated with churn, and which groups should be prioritised for action.
-					</p>
-
-					<h2>Key Questions</h2>
-
-					<ul>
-						<li>Which customer segments have the highest churn rate?</li>
-						<li>Where is the largest annualised revenue at risk?</li>
-						<li>Which contract, tenure, payment, and service patterns are linked to churn?</li>
-						<li>Which retention actions should be prioritised first?</li>
-					</ul>
-
-					<h2>Data & Tools</h2>
-
-					<ul>
-						<li><strong>Dataset:</strong> 7,043 telco customers</li>
-						<li><strong>Tools:</strong> Python, Power BI, DAX, Power Query</li>
-						<li><strong>Techniques:</strong> EDA, segmentation, churn-rate analysis, revenue-at-risk calculation, dashboard storytelling</li>
-					</ul>
-
-					<h2>Approach</h2>
-
-					<ol>
-						<li>Cleaned and explored customer-level data.</li>
-						<li>Created churn, tenure, contract, service, and revenue-risk metrics.</li>
-						<li>Grouped customers into commercially meaningful micro-segments.</li>
-						<li>Built Power BI dashboard pages for churn overview, risk segmentation, and retention priority.</li>
-						<li>Translated analytical findings into business recommendations.</li>
-					</ol>
-
-					<h2>Key Insights</h2>
-
-					<ul>
-						<li>Approximately <strong>$1.67M annualised revenue</strong> was identified as at risk from churn.</li>
-						<li>The top five high-risk micro-segments represented approximately 75% of total exposure.</li>
-						<li>Month-to-month contracts, short tenure, and selected payment/service patterns were strongly associated with churn risk.</li>
-						<li>Retention effort should focus on high-risk, high-value customer groups rather than broad discounting.</li>
-					</ul>
-
-					<h2>Business Recommendations</h2>
-
-					<ul>
-						<li>Prioritise contract migration offers for high-risk month-to-month customers.</li>
-						<li>Design early-tenure onboarding interventions for new customers.</li>
-						<li>Target high-risk segments with value-preserving retention offers.</li>
-						<li>Use an A/B-test framework before scaling retention interventions.</li>
-					</ul>
-
-					<h2>Project Value</h2>
-
-					<p>
-						This project demonstrates my ability to connect customer analytics with commercial decision-making. It shows how I use Power BI, DAX, segmentation logic, and business framing to turn churn patterns into practical retention actions.
-					</p>
-
-					<ul class="actions">
-						<li>
-							<a href="https://github.com/phuongvietdang1912-BA/business-analytics-portfolio/tree/main/01-Telco-project" class="button primary" target="_blank" rel="noopener noreferrer">View GitHub Project</a>
-						</li>
-						<li>
-							<a href="../index.html#projects" class="button">Back to Projects</a>
-						</li>
-					</ul>
-				</section>
-
-			</div>
-		</div>
-
-		<div id="sidebar">
-			<div class="inner">
-
-				<nav id="menu">
-					<header class="major">
-						<h2>Menu</h2>
-					</header>
-
-					<ul>
-						<li><a href="../index.html">Homepage</a></li>
-						<li><a href="../index.html#projects">Projects</a></li>
-						<li><a href="../index.html#skills">Skills</a></li>
-						<li><a href="../index.html#about">About</a></li>
-						<li><a href="../index.html#contact">Contact</a></li>
-						<li>
-							<span class="opener">Project Pages</span>
-							<ul>
-								<li><a href="telco.html">Telco Churn</a></li>
-								<li><a href="instacart.html">Instacart</a></li>
-								<li><a href="air-quality.html">Air Quality</a></li>
-								<li><a href="melbourne-ptv.html">Melbourne PTV</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-
-				<section>
-					<header class="major">
-						<h2>Contact</h2>
-					</header>
-
-					<ul class="contact">
-						<li class="icon solid fa-envelope">
-							<a href="mailto:phuong.vietdang1912@gmail.com">phuong.vietdang1912@gmail.com</a>
-						</li>
-						<li class="icon brands fa-linkedin">
-							<a href="https://www.linkedin.com/in/phuongviet1912/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-						</li>
-						<li class="icon brands fa-github">
-							<a href="https://github.com/phuongvietdang1912-BA/business-analytics-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
-						</li>
-					</ul>
-				</section>
-
-				<footer id="footer">
-					<p class="copyright">&copy; 2026 Phuong Viet Dang.</p>
-				</footer>
-
-			</div>
-		</div>
-
-	</div>
-
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
-
-</body>
-</html>
