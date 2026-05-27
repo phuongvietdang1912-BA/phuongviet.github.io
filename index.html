@@ -1,14 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
 	<title>Phuong Viet Dang | Business Analytics Portfolio</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="description" content="Business Analytics portfolio of Phuong Viet Dang, featuring SQL, Python, Power BI, DAX, data warehousing, forecasting, and stakeholder insight projects." />
 
-	<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=3" />
-	<link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg?v=3" />
+	<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=4" />
+	<link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg?v=4" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
+		:root {
+			--accent: #2563eb;
+			--accent-dark: #1d4ed8;
+			--navy: #0f172a;
+			--soft-bg: #f8fafc;
+		}
+
+		a {
+			color: var(--accent);
+		}
+
+		a:hover {
+			color: var(--accent-dark) !important;
+		}
+
+		strong, b {
+			color: var(--navy);
+		}
+
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"],
+		button,
+		.button {
+			box-shadow: inset 0 0 0 2px var(--accent);
+			color: var(--accent) !important;
+		}
+
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		button:hover,
+		.button:hover {
+			background-color: rgba(37, 99, 235, 0.08);
+			box-shadow: inset 0 0 0 2px var(--accent-dark);
+			color: var(--accent-dark) !important;
+		}
+
+		input[type="submit"].primary,
+		input[type="reset"].primary,
+		input[type="button"].primary,
+		button.primary,
+		.button.primary {
+			background-color: var(--accent);
+			box-shadow: none;
+			color: #ffffff !important;
+		}
+
+		input[type="submit"].primary:hover,
+		input[type="reset"].primary:hover,
+		input[type="button"].primary:hover,
+		button.primary:hover,
+		.button.primary:hover {
+			background-color: var(--accent-dark);
+		}
+
+		header.major > :last-child {
+			border-bottom-color: var(--accent);
+		}
+
+		#header {
+			border-bottom-color: var(--accent);
+		}
+
+		#menu ul a:hover,
+		#menu ul span:hover {
+			color: var(--accent);
+		}
+
+		#menu ul a.opener:before,
+		#menu ul span.opener:before {
+			color: var(--accent);
+		}
+
+		.icon.solid:before,
+		.icon.brands:before {
+			color: var(--accent);
+		}
+
+		.features article .icon:before {
+			color: var(--accent);
+		}
+
+		.features article .icon:after {
+			border-color: rgba(37, 99, 235, 0.35);
+		}
+
+		#sidebar {
+			background-color: var(--soft-bg);
+		}
+
 		#banner {
 			align-items: center;
 		}
@@ -46,9 +139,9 @@
 			align-items: center;
 			gap: 0.4rem;
 			padding: 0.35rem 0.65rem;
-			border: 1px solid #f56a6a;
+			border: 1px solid var(--accent);
 			border-radius: 999px;
-			color: #f56a6a;
+			color: var(--accent);
 			background: #fff;
 			font-size: 0.72rem;
 			font-weight: 700;
@@ -132,15 +225,16 @@
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
-			border: solid 1px rgba(245, 106, 106, 0.55);
+			border: solid 1px rgba(37, 99, 235, 0.45);
 			border-radius: 50%;
-			color: #f56a6a;
+			color: var(--accent);
 			background: #fff;
 		}
 
 		.skill-icon:before {
 			font-size: 1.15rem;
 			margin: 0;
+			color: var(--accent);
 		}
 
 		.skill-block {
@@ -222,7 +316,9 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h1>Phuong Viet Dang</h1>
+							<h1>Business Analytics<br />
+							Data Analysis<br />
+							Power BI | SQL | Python</h1>
 
 							<p>Turning business problems into analytical solutions</p>
 						</header>
